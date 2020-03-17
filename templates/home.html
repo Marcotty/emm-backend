@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Help Flask Server EMM Console</title>
+  </head>
+  <body>
+	   <p> Ce serveur Flask sert d'API REST au serveur frontend en Angular
+        Si vous souhaitez développer une autre solution frontend à partir de cette API, il faut utiliser les requêtes définies.
+      
+        par defaut, le serveur tourne sur http:localhost/5000
+           
+           Récupérer les devices d'une entreprise : 
+                GET http://localhost/5000/"enterprise/entrepriseNumber"/devices
+           "enterprise/entrepriseNumber" étant l'id de l'entreprise attribué par la  
+                <a href="https://console.cloud.google.com/" > Google Console</a>
+            
+           Modifier tous les devices 
+                POST http://localhost/5000/"enterprise/entrepriseNumber"/devices
+                prend tous les devices en paramètres et applique la méthode patch de l'API pour les mettre à jour
+        
+           Modifier un seul device
+               POST http://localhost/5000/"enterprise/entrepriseNumber"/devices/"deviceId"
+           "deviceId" est le nom du device assigné par la Google Console de la forme :
+           "enterprise/entrepriseNumber/devices/deviceName"
+        
+            
+           Récupérer les politiques :
+                GET http://localhost/5000/"enterprise/entrepriseNumber"/policies
+           
+           
+           Récupérer les infos sur l'entreprise Cloud Google
+           
+                GET http://localhost/5000/"enterprise/entrepriseNumber"/enterprise
+           
+      </p>
+      
+  </body>
+</html>
